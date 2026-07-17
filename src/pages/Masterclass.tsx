@@ -138,7 +138,7 @@ export default function Masterclass() {
     {
       id: 5,
       question: "Do I need AI or technical experience?",
-      answer: "No. This masterclass focuses on leadership, not programming. If you're responsible for leading people, teams, or change, you'll benefit from the frameworks you'll learn.",
+      answer: "Not at all. This masterclass focuses on leadership, not programming. If you're responsible for leading people, teams, or change, you'll benefit from the frameworks you'll learn.",
     },
     {
       id: 6,

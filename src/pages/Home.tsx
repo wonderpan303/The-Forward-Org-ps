@@ -8,7 +8,6 @@ import { HowItWorks } from "../components/HowItWorks";
 import { AIAlignmentIndex } from "../components/AIAlignmentIndex";
 import { FreeResource } from "../components/FreeResource";
 import { VisionStatement } from "../components/VisionStatement";
-import { ValueProp } from "../components/ValueProp";
 import { FounderConnect } from "../components/FounderConnect";
 import { FAQ } from "../components/FAQ";
 import { ContactSection } from "../components/ContactSection";
@@ -26,7 +25,6 @@ export default function Home() {
       <div id="ai-index"><AIAlignmentIndex /></div>
       <div id="free-resource"><FreeResource /></div>
       <VisionStatement />
-      <ValueProp />
       <div id="connect-with-pan"><FounderConnect /></div>
       <div id="newsletter"><ThoughtLeadership /></div>
       <div id="faq"><FAQ /></div>
