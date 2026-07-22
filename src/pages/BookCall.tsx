@@ -29,18 +29,18 @@ export default function BookCallPage() {
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.id = "lunacal-inline-direct-script";
-    script.innerHTML = `(function(L,U,N){let p=(a,ar)=>a.q.push(ar),d=L.document;L.Lunacal=L.Lunacal||function(){let lun=L.Lunacal,ar=arguments;if(!lun.loaded){lun.ns={};lun.q=lun.q||[];d.head.appendChild(d.createElement("script")).src=U;lun.loaded=!0}if(ar[0]===N){const api=function(){p(api,arguments)};const ns=ar[1];api.q=api.q||[];if(typeof ns==="string"){lun.ns[ns]=lun.ns[ns]||api;p(lun.ns[ns],ar);p(lun,["initNamespace",ns])}else p(lun,ar);return}p(lun,ar)};if(!L.Cal)L.Cal=L.Lunacal})(window,"https://app.lunacal.ai/embed/embed.js","init");Lunacal("init","forward-strategy-call",{origin:"https://app.lunacal.ai"});
+    script.innerHTML = `(function(L,U,N){let p=(a,ar)=>a.q.push(ar),d=L.document;L.Lunacal=L.Lunacal||function(){let lun=L.Lunacal,ar=arguments;if(!lun.loaded){lun.ns={};lun.q=lun.q||[];d.head.appendChild(d.createElement("script")).src=U;lun.loaded=!0}if(ar[0]===N){const api=function(){p(api,arguments)};const ns=ar[1];api.q=api.q||[];if(typeof ns==="string"){lun.ns[ns]=lun.ns[ns]||api;p(lun.ns[ns],ar);p(lun,["initNamespace",ns])}else p(lun,ar);return}p(lun,ar)};if(!L.Cal)L.Cal=L.Lunacal})(window,"https://app.lunacal.ai/embed/embed.js","init");Lunacal("init","focused-ai-strategy-pan",{origin:"https://app.lunacal.ai"});
                   // Enable auto-forwarding of query parameters
                   Lunacal.config = Lunacal.config || {};
                   Lunacal.config.forwardQueryParams = true;
                   
-        Lunacal.ns["forward-strategy-call"]("inline", {
-          elementOrSelector:"#my-lunacal-inline-forward-strategy-call",
+        Lunacal.ns["focused-ai-strategy-pan"]("inline", {
+          elementOrSelector:"#my-lunacal-inline-focused-ai-strategy-pan",
           config: {"layout":""},
-          calLink: "pan-seth/forward-strategy-call",
+          calLink: "pan-seth/focused-ai-strategy-pan",
         });
-        Lunacal.ns["forward-strategy-call"]("preload", { calLink: "pan-seth/forward-strategy-call", type: "inline", options: { prerenderIframe: true } });
-        Lunacal.ns["forward-strategy-call"]("ui", {"theme":"light","styles":{"branding":{}},"hideEventTypeDetails":false,"layout":"","cssVarsPerTheme":{"light":{"theme-border":"#E4E4E7","theme-background-primary":"#C9A55A","theme-background-secondary":"#F4F4F5","theme-background-card":"#ffffff","theme-background-base":"#ffffff","theme-text-primary":"#111827","theme-text-secondary":"#4B5563","theme-text-card":"#111827","theme-text-base":"#111827","theme-rounded-base":"0px","theme-rounded-calendar":"0px","theme-rounded-timeslot":"4px","theme-rounded-day":"4px","theme-rounded-button":"0px","theme-shadow-calendar":"none","theme-shadow-button":"none","theme-shadow-timeslot":"none","theme-font-family":"Figtree"},"dark":{"theme-border":"#E4E4E7","theme-background-primary":"#C9A55A","theme-background-secondary":"#F4F4F5","theme-background-card":"#ffffff","theme-background-base":"#ffffff","theme-text-primary":"#111827","theme-text-secondary":"#4B5563","theme-text-card":"#111827","theme-text-base":"#111827","theme-rounded-base":"0px","theme-rounded-calendar":"0px","theme-rounded-timeslot":"4px","theme-rounded-day":"4px","theme-rounded-button":"0px","theme-shadow-calendar":"none","theme-shadow-button":"none","theme-shadow-timeslot":"none","theme-font-family":"Figtree"}},"displayedContent":{"image":true,"name":true,"designation":true,"description":true,"eventName":true,"highlightBar":false},"background":{"type":"plain"},"stylePreset":""});`;
+        Lunacal.ns["focused-ai-strategy-pan"]("preload", { calLink: "pan-seth/focused-ai-strategy-pan", type: "inline", options: { prerenderIframe: true } });
+        Lunacal.ns["focused-ai-strategy-pan"]("ui", {"theme":"light","styles":{"branding":{}},"hideEventTypeDetails":false,"layout":"","cssVarsPerTheme":{"light":{"theme-border":"#E4E4E7","theme-background-primary":"#C9A55A","theme-background-secondary":"#F4F4F5","theme-background-card":"#ffffff","theme-background-base":"#ffffff","theme-text-primary":"#111827","theme-text-secondary":"#4B5563","theme-text-card":"#111827","theme-text-base":"#111827","theme-rounded-base":"0px","theme-rounded-calendar":"0px","theme-rounded-timeslot":"4px","theme-rounded-day":"4px","theme-rounded-button":"0px","theme-shadow-calendar":"none","theme-shadow-button":"none","theme-shadow-timeslot":"none","theme-font-family":"Figtree"},"dark":{"theme-border":"#E4E4E7","theme-background-primary":"#C9A55A","theme-background-secondary":"#F4F4F5","theme-background-card":"#ffffff","theme-background-base":"#ffffff","theme-text-primary":"#111827","theme-text-secondary":"#4B5563","theme-text-card":"#111827","theme-text-base":"#111827","theme-rounded-base":"0px","theme-rounded-calendar":"0px","theme-rounded-timeslot":"4px","theme-rounded-day":"4px","theme-rounded-button":"0px","theme-shadow-calendar":"none","theme-shadow-button":"none","theme-shadow-timeslot":"none","theme-font-family":"Figtree"}},"displayedContent":{"image":true,"name":true,"designation":true,"description":true,"eventName":true,"highlightBar":false},"background":{"type":"plain"},"stylePreset":""});`;
     document.body.appendChild(script);
 
     return () => {
@@ -167,10 +167,10 @@ export default function BookCallPage() {
 
           {/* Right Column: Inline Lunacal Embed */}
           <div ref={calendarRef} className="w-full">
-            <div className="relative bg-white p-4 sm:p-6 rounded-none shadow-sm border border-[#D4C9B8] overflow-hidden">
+            <div className="relative bg-white p-4 sm:p-6 rounded-none shadow-sm border border-[#D4C9B8] overflow-visible">
               <div 
-                id="my-lunacal-inline-forward-strategy-call" 
-                style={{ width: "100%", height: "850px", overflow: "hidden" }} 
+                id="my-lunacal-inline-focused-ai-strategy-pan" 
+                style={{ width: "100%", height: "850px", overflow: "visible" }} 
                 className="relative z-10"
               />
             </div>
