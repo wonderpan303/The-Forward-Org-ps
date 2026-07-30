@@ -354,7 +354,8 @@ export default function Scorecard() {
     setGateError("");
 
     try {
-      const listId = 3; 
+      const rawEnvListId = import.meta.env.VITE_BREVO_LIST_SCORECARD;
+      const listId = rawEnvListId ? parseInt(rawEnvListId, 10) : 6;
       const attributes = {
         FIRSTNAME: gateName.split(" ")[0] || gateName,
         FULLNAME: gateName,
