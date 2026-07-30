@@ -8,6 +8,7 @@ import maternityImg from "../assets/images/maternity.jpg";
 import bookImg from "../assets/images/book_do_hard_things.jpg";
 import mentorImg from "../assets/images/mentor.jpg";
 import todayImg from "../assets/images/today.jpg";
+import forwardOrgExistsImg from "../assets/images/forward_org_exists.png";
 
 export default function About() {
   const [_, setLocation] = useLocation();
@@ -181,8 +182,8 @@ export default function About() {
                 className="relative w-full aspect-[4/5] max-w-[360px] bg-sand overflow-hidden shadow-md border border-gold/10"
               >
                 <img
-                  src={todayImg}
-                  alt="Pan Seth today in active workspace"
+                  src={forwardOrgExistsImg}
+                  alt="Pan Seth"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>

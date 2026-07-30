@@ -4,7 +4,7 @@ import { useLocation } from "wouter";
 import { InteractiveButton } from "../components/InteractiveButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { submitToBrevo } from "../utils/submitToBrevo";
-import panPhoto from "../assets/images/today.jpg";
+import panPhoto from "../assets/images/forward_org_exists.png";
 
 interface Question {
   id: number;
