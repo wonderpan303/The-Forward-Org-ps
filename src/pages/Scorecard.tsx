@@ -4,6 +4,7 @@ import { useLocation } from "wouter";
 import { InteractiveButton } from "../components/InteractiveButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { submitToBrevo } from "../utils/submitToBrevo";
+import panPhoto from "../assets/images/today.jpg";
 
 interface Question {
   id: number;
@@ -740,13 +741,13 @@ export default function Scorecard() {
                 <div className="pt-2">
                   <p className="font-sans text-[15px] md:text-[16px] text-ink leading-relaxed font-normal">
                     {levelLabel === "Observer" && (
-                      <>You are aware that AI is changing leadership, but you may still be waiting for greater clarity before taking action. Your opportunity is to move from observation to confident personal use.</>
+                      <>You are aware AI is changing leadership, but it has not yet changed how you lead. Right now you are consuming information without a system to act on it. The opportunity is to stop studying AI from a distance and start becoming the leader who uses it with confidence.</>
                     )}
                     {levelLabel === "Practitioner" && (
-                      <>You are beginning to use AI, but your approach may still be occasional or fragmented. Your opportunity is to create a repeatable way of operating and begin modelling AI-enabled leadership. It is the best time to turn your progress into influence. You use AI. Your team sees it. What they do not see yet is a leader who has made that progress repeatable, teachable and impossible to ignore.</>
+                      <>You have started using AI, but your leadership has not fully evolved with it yet. Today, AI helps you work faster. The opportunity is to become the leader who uses it to think, decide, and lead differently — not just to save time.</>
                     )}
                     {levelLabel === "Forward Leader" && (
-                      <>You are already guiding meaningful change. Your opportunity is to scale your influence, build stronger systems, and shape broader organizational direction. Now it is time your CEO saw it too. This score puts you ahead of nearly every leader taking this assessment. The work left is not building more. It is making sure the right people upstream can see what you have already built.</>
+                      <>You have already evolved how you think and lead with AI. Most leaders are still catching up to where you are. The opportunity now is making sure the right people see it — and using your position to shape what comes next.</>
                     )}
                   </p>
                 </div>
@@ -804,13 +805,13 @@ export default function Scorecard() {
             <div className="border-l-4 border-gold pl-6 py-2">
               <p className="font-serif text-[18px] md:text-[21px] italic text-[#1A3C34] font-medium leading-relaxed">
                 {levelLabel === "Observer" && (
-                  <>"You are not behind because you lack drive. You are behind because nobody gave you a system. A tool does not make you a leader. A system does."</>
+                  <>"Leadership isn't about having all the answers anymore. It's about creating the conditions where people and AI achieve more together."</>
                 )}
                 {levelLabel === "Practitioner" && (
                   <>"You are not stuck. You are stalled at the exact point where good leaders either build a system or burn out repeating the same win."</>
                 )}
                 {levelLabel === "Forward Leader" && (
-                  <>"You built what most leaders are still asking permission for. The only risk now is staying the best-kept secret in your building."</>
+                  <>"AI won't replace great leaders. But it will expose leaders who refuse to evolve."</>
                 )}
               </p>
             </div>
@@ -818,166 +819,132 @@ export default function Scorecard() {
             {/* What your results are telling you section (covers full margin width) */}
             <div className="space-y-6">
               <h2 className="font-serif text-[28px] font-bold text-[#1A3C34] text-left">
-                What your results are telling you
+                Your Leadership Profile
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <CapabilityCard 
                   title="Lead Yourself" 
-                  description={status1 === "Strong" ? "You have a real operating rhythm with AI. Protect it and make it visible to others." : status1 === "Developing" ? "You reach for AI sometimes. You do not yet have a routine that makes it automatic." : "Developing your own AI routine is critical. Right now, manual workflows consume valuable leadership attention."}
+                  description={levelLabel === "Forward Leader" ? "AI is part of how you think and work. You have a system, not just habits." : "You reach for AI sometimes. You do not yet have a routine that makes it automatic."}
                   status={status1} 
                   score={score1} 
                 />
                 <CapabilityCard 
                   title="Lead Others" 
-                  description={status2 === "Strong" ? "Your team trusts you to guide them through change. That trust is rare and it is your leverage point." : status2 === "Developing" ? "Some of your team has adopted AI. The rest is waiting for permission you have not fully given yet." : "Your team is watching you for direction on AI. Right now that direction is not clear, even to you."}
+                  description={levelLabel === "Forward Leader" ? "Your team trusts your direction on AI. Most have adopted it with confidence." : levelLabel === "Practitioner" ? "Some of your team has adopted AI. The rest are waiting for permission you have not fully given yet." : "Your team is unsure where you stand on AI. They are waiting for direction you have not fully given yet."}
                   status={status2} 
                   score={score2} 
                 />
                 <CapabilityCard 
                   title="Lead Transformation" 
-                  description={status3 === "Strong" ? "You can walk into a room and defend an AI opportunity with numbers, not enthusiasm." : status3 === "Developing" ? "You can name a strong opportunity. You have not yet built the case that gets it funded." : "Ideas come up. Few get evaluated, prioritized or connected to a result your CEO would notice."}
+                  description={levelLabel === "Forward Leader" ? "You can build the case and get it funded. Your opportunity is clear and credible." : levelLabel === "Practitioner" ? "You can name a strong opportunity. You have not yet built the case that gets it funded." : "You have not yet built a case for AI that gets attention or gets funded."}
                   status={status3} 
                   score={score3} 
                 />
                 <CapabilityCard 
                   title="Lead Sustainably" 
-                  description={status4 === "Strong" ? "Your team could likely continue without you for a while. Push until it could continue indefinitely." : status4 === "Developing" ? "Your team could likely continue without you for a while. Push until it could continue indefinitely." : "Nothing you have built with AI would survive you stepping away for a month. That is not scale. That is a bottleneck with your name on it."}
+                  description={levelLabel === "Forward Leader" ? "Your team could carry this forward without you. That is rare, and it is real leverage." : levelLabel === "Practitioner" ? "Your team could likely continue without you for a while. Push until it could continue indefinitely." : "Right now, progress depends entirely on you. It would stall if you stepped away."}
                   status={status4} 
                   score={score4} 
                 />
               </div>
             </div>
 
-            {/* Rebuilt Compounding Gap section with dark theme, grid background, and linear heading layout */}
+            {/* Rebuilt Forward Leaders Lab section */}
             <div className="bg-[#1C332D] text-white p-8 sm:p-12 relative overflow-hidden rounded-none border border-teal/10">
-              {/* Grid Design overlay matching homepage dark strips */}
               <div className="absolute inset-0 bg-[linear-gradient(rgba(250,250,248,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(250,250,248,0.035)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
               
-              <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.3fr] gap-8 md:gap-12 items-center relative z-10">
-                {/* Left side: Heading / Subheading */}
-                <div className="space-y-4 text-left">
-                  <h3 className="font-serif text-3xl font-bold text-[#FAFAF8] leading-tight">
-                    The gap is not staying the same. It is compounding.
-                  </h3>
-                  <p className="font-sans text-sm text-[#FAFAF8]/75 leading-relaxed">
-                    Organizations won't wait until every leader feels ready. The people who develop the confidence to lead AI transformation will shape the future. Everyone else will be asked to follow.
-                  </p>
-                </div>
-
-                {/* Right side: Rebuilt SVG Line Graph (Expectation baseline flat at top, Gap curves downward) */}
-                <div className="w-full flex flex-col items-center">
-                  <div className="w-full bg-black/20 p-4 border border-white/5 relative">
-                    
-                    {/* Interactive hover tracker overlay coordinates */}
-                    <svg 
-                      ref={graphSvgRef}
-                      width="100%" 
-                      height="200" 
-                      viewBox="0 0 600 200" 
-                      className="overflow-visible select-none"
-                      onMouseMove={handleMouseMove}
-                      onMouseLeave={() => setHoveredX(null)}
-                    >
-                      {/* Grid Lines */}
-                      <line x1="50" y1="40" x2="550" y2="40" stroke="#FAFAF8" strokeWidth="0.5" opacity="0.08" />
-                      <line x1="50" y1="110" x2="550" y2="110" stroke="#FAFAF8" strokeWidth="0.5" opacity="0.08" />
-                      <line x1="50" y1="180" x2="550" y2="180" stroke="#FAFAF8" strokeWidth="0.5" opacity="0.08" />
-                       {/* Shaded Compounding Gap Area (follows curve path) */}
-                       <path 
-                         d="M 50 40 L 550 40 L 550 180 Q 300 40 50 40 Z" 
-                         fill="rgba(201, 165, 90, 0.12)"
-                         opacity="0.85"
-                       />
- 
-                       {/* Line 1: Expectation Baseline (Flat dotted line at y=40) */}
-                       <line 
-                         x1="50" 
-                         y1="40" 
-                         x2="550" 
-                         y2="40" 
-                         stroke="#FAFAF8" 
-                         strokeWidth="2" 
-                         strokeDasharray="4 4" 
-                         opacity="0.8"
-                       />
- 
-                       {/* Line 2: Compounding AI Alignment Gap (Exponential downward curve using quadratic Bézier curve: control point at 350, 40 pulls curve flat at first then compounding downwards) */}
-                       <path 
-                         d="M 50 40 Q 350 40 550 180" 
-                         fill="none" 
-                         stroke="#C9A55A" 
-                         strokeWidth="3.5" 
-                         strokeLinecap="round"
-                       />
- 
-                       {/* Endpoint dots */}
-                       <circle cx="50" cy="40" r="4" fill="#C9A55A" />
-                       <circle cx="550" cy="180" r="4" fill="#C9A55A" />
- 
-                       {/* Interactive Hover Tracker Line & Tooltip */}
-                       {hoveredX !== null && (
-                         <>
-                           {/* Vertical tracker line */}
-                           <line 
-                             x1={hoveredX} 
-                             y1="20" 
-                             x2={hoveredX} 
-                             y2="190" 
-                             stroke="#C9A55A" 
-                             strokeWidth="1.5" 
-                             opacity="0.6" 
-                           />
-                           {/* Circle marker on compounding curve */}
-                           <circle 
-                             cx={hoveredX} 
-                             cy={getGraphYAtX(hoveredX)} 
-                             r="6" 
-                             fill="#FAF9F6" 
-                             stroke="#C9A55A" 
-                             strokeWidth="2.5" 
-                           />
-                           {/* Dynamic value display indicator */}
-                           <foreignObject 
-                             x={Math.max(50, Math.min(hoveredX - 60, 430))} 
-                             y="5" 
-                             width="120" 
-                             height="30"
-                           >
-                             <div className="bg-black/80 border border-gold/45 text-[10px] text-gold font-mono py-1 px-2 text-center rounded-none select-none tracking-wider">
-                               GAP: {Math.round(((getGraphYAtX(hoveredX) - 40) / 140) * 100)}% WIDER
-                             </div>
-                           </foreignObject>
-                         </>
-                       )}
-                    </svg>
-
-                    {/* Basic Legend details block */}
-                    <div className="flex justify-between items-center text-[10px] font-mono text-white/60 tracking-wider pt-2 select-none border-t border-white/5 mt-1">
-                      <span className="flex items-center gap-1.5"><span className="h-1.5 w-3 bg-white/40 inline-block border border-dashed border-white" /> Expectation</span>
-                      <span className="flex items-center gap-1.5"><span className="h-1.5 w-3 bg-gold inline-block" /> Compounding Alignment Gap</span>
-                    </div>
-
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+                {/* Left side: Pan's photo on desktop, stacked top on mobile */}
+                <div className="w-full flex justify-center items-center">
+                  <div className="relative w-full max-w-sm aspect-[3/4] overflow-hidden border border-white/10">
+                    <div className="absolute inset-0 bg-[#1C332D]/20 mix-blend-overlay z-10 pointer-events-none" />
+                    <img 
+                      src={panPhoto} 
+                      alt="Pan Seth" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
 
+                {/* Right side: Text content */}
+                <div className="space-y-6 text-left">
+                  <h3 className="font-serif text-[28px] md:text-3xl font-bold text-[#FAFAF8] leading-tight">
+                    Introducing the Forward Leaders Lab
+                  </h3>
+                  <p className="font-sans text-sm text-[#FAFAF8]/85 leading-relaxed text-balance">
+                    The Forward Leader Lab is a leadership transformation experience for the Age of AI. It equips ambitious leaders with the mindset, capabilities, and strategic frameworks to thrive in a world where intelligence is abundant and change is constant. Rather than simply teaching AI tools, the Lab helps leaders evolve how they think, decide, communicate, and lead — so they can harness AI to increase their impact, empower their teams, and build organizations that are resilient, innovative, and AI-forward.
+                  </p>
+
+                  <ul className="space-y-3 font-sans text-sm text-[#FAFAF8] pt-2">
+                    {levelLabel === "Forward Leader" ? (
+                      <>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Sharpen your judgment further with AI as a thought partner</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Turn your results into visibility at the highest level</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Shape how your organization leads through the age of AI</span>
+                        </li>
+                      </>
+                    ) : levelLabel === "Practitioner" ? (
+                      <>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Turn your AI wins into a repeatable system, not one-off moments</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Lead your team through change with clarity and trust</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Build the case that earns you a bigger seat at the table</span>
+                        </li>
+                      </>
+                    ) : (
+                      <>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Use AI as a thought partner, not just a tool</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Lead your team through uncertainty with confidence</span>
+                        </li>
+                        <li className="flex items-start gap-2.5">
+                          <span className="text-gold mt-0.5 shrink-0">→</span>
+                          <span>Build a leadership system that does not depend only on you</span>
+                        </li>
+                      </>
+                    )}
+                  </ul>
+                </div>
               </div>
             </div>
 
             {/* What forward organizations look like section */}
             <div className="space-y-6">
               <h2 className="font-serif text-[28px] font-bold text-[#1A3C34] text-left">
-                What an AI-Forward Leader Looks Like
+                What Makes an AI-Forward Leader Different
               </h2>
+              <p className="font-sans text-sm text-ink-muted text-left">
+                AI-forward leaders do not simply adopt new tools. They evolve how they think, decide, and lead — so people and AI create more together.
+              </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
                 <div className="bg-white border border-[#E8D5B5] p-6 rounded-none flex flex-col justify-between gap-4 relative group">
                   <AnimatedBorder isHovered={true} color="rgba(26,60,52,0.15)" borderRadius={0} />
                   <div className="space-y-2">
                     <span className="font-serif text-lg font-bold text-gold">01</span>
-                    <h4 className="font-sans font-bold text-[14px] text-ink uppercase tracking-wider">They operate differently</h4>
+                    <h4 className="font-sans font-bold text-[14px] text-ink uppercase tracking-wider">They Think Differently</h4>
                     <p className="font-sans text-[13px] text-ink-muted leading-relaxed">
-                      They use AI to improve how they think, prepare, organize, decide, and execute.
+                      They use AI to ask better questions and make sharper decisions, not just find faster answers.
                     </p>
                   </div>
                 </div>
@@ -986,9 +953,9 @@ export default function Scorecard() {
                   <AnimatedBorder isHovered={true} color="rgba(26,60,52,0.15)" borderRadius={0} />
                   <div className="space-y-2">
                     <span className="font-serif text-lg font-bold text-gold">02</span>
-                    <h4 className="font-sans font-bold text-[14px] text-ink uppercase tracking-wider">They lead differently</h4>
+                    <h4 className="font-sans font-bold text-[14px] text-ink uppercase tracking-wider">They Lead Differently</h4>
                     <p className="font-sans text-[13px] text-ink-muted leading-relaxed">
-                      They create clarity, reduce fear, model the behaviour they expect, and help their people adapt.
+                      They create clarity in uncertainty and build trust instead of having every answer themselves.
                     </p>
                   </div>
                 </div>
@@ -997,9 +964,9 @@ export default function Scorecard() {
                   <AnimatedBorder isHovered={true} color="rgba(26,60,52,0.15)" borderRadius={0} />
                   <div className="space-y-2">
                     <span className="font-serif text-lg font-bold text-gold">03</span>
-                    <h4 className="font-sans font-bold text-[14px] text-ink uppercase tracking-wider">They create value differently</h4>
+                    <h4 className="font-sans font-bold text-[14px] text-ink uppercase tracking-wider">They Create Value Differently</h4>
                     <p className="font-sans text-[13px] text-ink-muted leading-relaxed">
-                      They identify meaningful opportunities, connect AI to business outcomes, and communicate progress with confidence.
+                      They redesign how work gets done, not just automate the old way of doing it.
                     </p>
                   </div>
                 </div>
@@ -1008,9 +975,9 @@ export default function Scorecard() {
                   <AnimatedBorder isHovered={true} color="rgba(26,60,52,0.15)" borderRadius={0} />
                   <div className="space-y-2">
                     <span className="font-serif text-lg font-bold text-gold">04</span>
-                    <h4 className="font-sans font-bold text-[14px] text-ink uppercase tracking-wider">They sustain change differently</h4>
+                    <h4 className="font-sans font-bold text-[14px] text-ink uppercase tracking-wider">They Build Organizations Differently</h4>
                     <p className="font-sans text-[13px] text-ink-muted leading-relaxed">
-                      They build habits, systems, champions, and learning rhythms so progress does not depend on one person.
+                      They make learning and experimentation part of everyday work, not a one-time initiative.
                     </p>
                   </div>
                 </div>
@@ -1028,40 +995,28 @@ export default function Scorecard() {
                   </span>
                   
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-white leading-tight">
-                    {levelLabel === "Observer" && <>You do not need more AI tools. You need the system that turns them into leadership.</>}
-                    {levelLabel === "Practitioner" && <>Build the influence that gets you in the room where decisions get made.</>}
-                    {levelLabel === "Forward Leader" && <>You are ready for the room, not just the result.</>}
+                    Become the Leader the Future Requires.
                   </h3>
                   
                   <p className="font-sans text-sm text-white/85 leading-relaxed max-w-xl">
-                    {levelLabel === "Observer" && (
-                      <>That is exactly what the Forward Leader Accelerator™ builds, starting with the free masterclass.</>
-                    )}
-                    {levelLabel === "Practitioner" && (
-                      <>The Forward Leader Accelerator™ is built for exactly this stage. Start with the free masterclass.</>
-                    )}
-                    {levelLabel === "Forward Leader" && (
-                      <>The Forward Leader Accelerator™ turns what you have built into your Forward Leader Talk™ in front of your own VP. Start with the free masterclass.</>
-                    )}
+                    The Forward Leaders Lab is opening soon. Join the waitlist to be first in line.
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                   <InteractiveButton
-                    onClick={() => setLocation("/masterclass")}
+                    onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSdRjzTLeCRBWhdKpHSyTw4__QwTG1SJVWyIML5CVAl7yf9nVg/viewform?usp=preview", "_blank")}
                     variant="gold"
-                    className="px-8 py-3.5 capitalize tracking-wider text-xs font-bold text-center"
+                    className="px-8 py-3.5 capitalize tracking-wider text-xs font-bold text-center flex items-center justify-center gap-2"
                   >
-                    Save Your Seat
+                    Join the Waitlist <span>→</span>
                   </InteractiveButton>
                   
                   <button 
                     onClick={() => setLocation("/book-a-call")}
                     className="font-sans text-xs font-bold text-white hover:text-gold border-b border-white/20 hover:border-gold py-1 transition-all text-center"
                   >
-                    {levelLabel === "Observer" && <>Prefer to talk it through first? Book a call.</>}
-                    {levelLabel === "Practitioner" && <>Ready to move faster? Book a call.</>}
-                    {levelLabel === "Forward Leader" && <>Want to skip ahead? Book a call.</>}
+                    Ready to move faster? Book a call.
                   </button>
                 </div>
 
