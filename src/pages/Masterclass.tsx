@@ -118,42 +118,42 @@ export default function Masterclass() {
     {
       id: 1,
       question: "Who's hosting this?",
-      answer: "Pan Seth, Founder of The Forward Org. After more than a decade building enterprise AI solutions that contributed to $600M+ in business impact and 2 AI patents, she now helps leaders build AI-forward organizations through leadership, strategy, and organizational transformation.",
+      answer: "Pan Seth, founder of The Forward Org. Pan has worked in data science and AI since 2016, including at Citi, PagerDuty and NielsenIQ, and has two filed AI patents. Today she helps founders, professionals and leaders make sense of AI and decide what to do next.",
     },
     {
       id: 2,
-      question: "What is The Forward Org?",
-      answer: "The Forward Org is an AI leadership and transformation advisory that helps organizations become AI-forward by developing AI-forward leaders, aligning strategy, strengthening culture, and building practical governance for lasting business value.",
+      question: "Who is this for?",
+      answer: "Founders, professionals, managers and executives who want to understand how AI changes the way they work and lead. No technical background needed.",
     },
     {
       id: 3,
-      question: "What will I gain from this masterclass?",
-      answer: "You'll discover your Forward Leadership Score, identify your current leadership stage, uncover your biggest capability gap, and leave with practical action items to become a more effective AI leader that you can apply tomorrow.",
+      question: "What will I gain?",
+      answer: "Your Forward Leadership Score, your current AI leadership stage, the one capability to strengthen first and one move you can make this week.",
     },
     {
       id: 4,
-      question: "Who is this designed for?",
-      answer: "Senior managers, directors, executives, and transformation leaders who want to lead AI initiatives with greater confidence, influence, and business impact- no technical background required.",
+      question: "Do I need AI or technical experience?",
+      answer: "Not at all. This session is about how you think, work and lead. No coding.",
     },
     {
       id: 5,
-      question: "Do I need AI or technical experience?",
-      answer: "Not at all. This masterclass focuses on leadership, not programming. If you're responsible for leading people, teams, or change, you'll benefit from the frameworks you'll learn.",
+      question: "What happens after the masterclass?",
+      answer: "You leave with your score and a clear next move. For anyone who wants to go deeper, I'll share an invitation to a small founding cohort, where we keep learning and practising together. It's optional.",
     },
     {
       id: 6,
-      question: "What happens after the masterclass?",
-      answer: "If you're ready to continue your journey, you'll be invited to join the Forward Leader Accelerator™, a six-month program designed to help leaders build the capabilities needed to lead AI transformation with confidence.",
+      question: "Is the masterclass free?",
+      answer: "Yes.",
     },
     {
       id: 7,
-      question: "Is the masterclass free?",
-      answer: "Yes. This complimentary masterclass is part of The Forward Org's mission to prepare leaders for the future of AI-powered organizations.",
+      question: "Will there be a replay?",
+      answer: "No. The score, exercises and Q&A work best live. If you miss this one, you'll be invited to the next.",
     },
     {
       id: 8,
-      question: "Will there be a replay?",
-      answer: "No. The assessment, discussions, and coaching are designed to be experienced live. If you can't attend this session, you'll have the opportunity to join a future masterclass.",
+      question: "What is The Forward Org?",
+      answer: "An AI strategy and leadership advisory that helps leaders and organizations become AI-Forward through strategy, culture and practical governance.",
     }
   ];
 
@@ -195,32 +195,6 @@ export default function Masterclass() {
       },
     },
   };
-
-  // Calendar Event parameters
-  const eventTitle = "Live Masterclass: Become the Leader Your Organization Trusts to Navigate AI";
-  const eventDesc = "You're registered for a live 90-minute session with Pan Seth, founder of The Forward Org. Come ready to score your own AI Leadership Readiness live → and to meet the leader you're becoming.";
-  const eventLoc = "[Zoom / webinar link to be inserted]";
-
-  const calendarUrlGoogle = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=20260717T160000Z%2F20260717T173000Z&details=${encodeURIComponent(eventDesc)}&location=${encodeURIComponent(eventLoc)}`;
-  
-  const calendarUrlYahoo = `https://calendar.yahoo.com/?v=60&view=d&type=20&title=${encodeURIComponent(eventTitle)}&st=20260717T160000Z&et=20260717T173000Z&desc=${encodeURIComponent(eventDesc)}&in_loc=${encodeURIComponent(eventLoc)}`;
-
-  const calendarUrlOutlook = `https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&subject=${encodeURIComponent(eventTitle)}&startdt=2026-07-17T12:00:00-04:00&enddt=2026-07-17T13:30:00-04:00&body=${encodeURIComponent(eventDesc)}&location=${encodeURIComponent(eventLoc)}`;
-
-  const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//The Forward Org//Masterclass Calendar//EN
-BEGIN:VEVENT
-UID:masterclass-20260717@theforwardorg.com
-DTSTAMP:20260717T120000Z
-DTSTART:20260717T160000Z
-DTEND:20260717T173000Z
-SUMMARY:${eventTitle}
-DESCRIPTION:${eventDesc}
-LOCATION:${eventLoc}
-END:VEVENT
-END:VCALENDAR`;
-  const calendarUrlApple = `data:text/calendar;charset=utf-8,${encodeURIComponent(icsContent)}`;
 
   const currentRegistrationUrl = typeof window !== "undefined" ? window.location.href : "https://theforwardorg.com/masterclass";
 
@@ -278,21 +252,21 @@ END:VCALENDAR`;
             className="max-w-3xl flex flex-col items-start"
           >
             <span className="font-sans font-bold text-xs text-gold capitalize tracking-[0.2em] block">
-              Live Masterclass
+              Free Live Masterclass
             </span>
 
             <motion.h1
               variants={itemVariants}
               className="font-serif text-hero leading-[1.12] font-bold tracking-tight text-white text-balance mt-3 md:mt-4"
             >
-              How to Future-Proof Your Leadership Career - Even If AI Feels Overwhelming
+              The AI-Forward Leader: How to Think, Work and Lead Differently in the AI Era
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="font-sans text-[17px] md:text-[19px] text-off-white/85 leading-relaxed font-light max-w-2xl mt-4 text-balance"
             >
-              Discover the leadership mindset, practical frameworks, and AI strategies that will help you confidently lead change, create greater influence, and become the leader your organization needs in the Age of AI.
+              AI is moving faster than most of us can keep up with. In 90 minutes we go beyond tools and prompts: what's changing, how AI-Forward leaders work differently and what you can do this week. Even if AI feels overwhelming.
             </motion.p>
 
             <motion.div
@@ -304,7 +278,7 @@ END:VCALENDAR`;
                 variant="gold"
                 className="text-center px-8 py-4 font-bold animate-none"
               >
-                Save My Seat
+                Join the Waitlist
               </InteractiveButton>
             </motion.div>
           </motion.div>
@@ -315,11 +289,11 @@ END:VCALENDAR`;
       <section className="py-8 bg-[#F7F4EF] border-y border-gold/15 relative z-30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 text-center text-sm font-sans font-medium text-ink-muted uppercase tracking-widest">
-            <span>Length: 90 minutes</span>
+            <span>90 minutes</span>
             <span className="hidden md:inline text-gold/60">•</span>
-            <span>Type: Live Interactive</span>
+            <span>Live and interactive</span>
             <span className="hidden md:inline text-gold/60">•</span>
-            <span>Live Only</span>
+            <span>Free</span>
             <span className="hidden md:inline text-gold/60">•</span>
             <span>No Replay</span>
           </div>
@@ -333,20 +307,20 @@ END:VCALENDAR`;
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="space-y-6">
                 <span className="font-sans font-bold text-xs text-gold capitalize tracking-[0.2em] block">
-                  The Core Challenge
+                  Why This Masterclass
                 </span>
                 <h2 className="font-serif text-[32px] md:text-[45px] leading-tight font-bold text-ink">
-                  The Next AI Conversation Needs a Different Kind of Leader.
+                  AI is everywhere. Clarity about what to do with it is rare.
                 </h2>
-                
+
                 <p className="font-serif text-xl md:text-2xl text-teal font-medium leading-relaxed border-l-2 border-gold/40 pl-6 my-8">
-                  AI transformation doesn't begin with technology. It begins with leaders who are prepared to guide it.
+                  Every week brings new tools and bold predictions. Few of them tell you how your work, your team or your business should change.
                 </p>
-                
+
                 <div className="font-sans text-base md:text-lg text-ink-muted leading-relaxed font-light mt-6 space-y-4">
-                  <p>Every organization is making AI decisions.</p>
-                  <p>The question is whether you'll help shape them or simply respond to them.</p>
-                  <p>This masterclass helps you understand where you stand today, uncover the leadership capability that matters most, and take the next step toward becoming the leader your organization will trust to guide AI transformation.</p>
+                  <p>This session is for the part after the headlines.</p>
+                  <p>You'll see how AI changes the way people think, work and lead, with real examples from around the world.</p>
+                  <p>No technical background needed.</p>
                 </div>
 
                 <div className="pt-8">
@@ -355,7 +329,7 @@ END:VCALENDAR`;
                     variant="gold"
                     className="px-8 py-4 font-bold"
                   >
-                    Reserve My Seat
+                    Join the Waitlist
                   </InteractiveButton>
                 </div>
               </div>
@@ -379,10 +353,10 @@ END:VCALENDAR`;
           <ScrollReveal duration={0.6}>
             <div className="mb-16 text-center md:text-left">
               <span className="font-sans font-bold text-xs text-gold capitalize tracking-[0.2em] block mb-3">
-                Program Structure
+                Think. Work. Lead.
               </span>
               <h2 className="font-serif text-[32px] md:text-[40px] font-bold text-ink leading-tight">
-                What To Expect
+                What You'll Learn
               </h2>
             </div>
           </ScrollReveal>
@@ -394,23 +368,23 @@ END:VCALENDAR`;
                 <span className="text-gold font-mono text-xl">01 /</span>
                 During the Masterclass
               </h3>
-              
+
               <ul className="space-y-4 font-sans text-[15px] md:text-[16px] text-ink-muted">
                 <li className="flex items-start gap-3">
                   <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
-                  <span>Discover the five stages of AI leadership.</span>
+                  <span><strong className="font-semibold text-ink">Think:</strong> the five stages of AI leadership, and where you stand today.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
-                  <span>Measure your Forward Leadership Score.</span>
+                  <span><strong className="font-semibold text-ink">Work:</strong> how AI-Forward professionals and teams redesign their work, beyond tools and prompts.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
-                  <span>Identify your strongest leadership capability and your biggest growth opportunity.</span>
+                  <span><strong className="font-semibold text-ink">Lead:</strong> how to guide your team or business through change people can trust.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
-                  <span>Learn what it takes to confidently lead AI transformation inside your organization.</span>
+                  <span>Plus: real AI stories from around the world that most feeds miss, and what they mean for you.</span>
                 </li>
               </ul>
             </div>
@@ -437,7 +411,59 @@ END:VCALENDAR`;
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
-                  <span>One move to lead the very next AI conversation in your organization → this week</span>
+                  <span>One move to lead your next AI conversation this week.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Box 03 */}
+            <div className="space-y-6 bg-white p-8 md:p-10 border border-gold/10 rounded-[2px] shadow-sm text-left">
+              <h3 className="font-serif text-2xl font-bold text-[#1A3C34] border-b border-gold/10 pb-4 flex items-center gap-3">
+                <span className="text-gold font-mono text-xl">03 /</span>
+                Who It's For
+              </h3>
+              <ul className="space-y-4 font-sans text-[15px] md:text-[16px] text-ink-muted">
+                <li className="flex items-start gap-3">
+                  <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
+                  <span>Founders who want AI to change how the business runs, beyond a few tools.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
+                  <span>Professionals who want to stay on top of their game as AI reshapes their role.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
+                  <span>Managers, directors and executives leading people through AI change.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
+                  <span>No technical background needed.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Box 04 */}
+            <div className="space-y-6 bg-white p-8 md:p-10 border border-gold/10 rounded-[2px] shadow-sm text-left">
+              <h3 className="font-serif text-2xl font-bold text-teal border-b border-gold/10 pb-4 flex items-center gap-3">
+                <span className="text-teal font-mono text-xl">04 /</span>
+                How the Session Runs
+              </h3>
+              <ul className="space-y-4 font-sans text-[15px] md:text-[16px] text-ink-muted">
+                <li className="flex items-start gap-3">
+                  <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
+                  <span>60 minutes of teaching and live exercises.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
+                  <span>20 minutes of open Q&amp;A.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
+                  <span>10 minutes on what's next, including an invitation for anyone who wants to go deeper.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-teal font-bold text-lg shrink-0 mt-0.5">→</span>
+                  <span>No hard sell. You'll leave with something useful whether you take the next step or not.</span>
                 </li>
               </ul>
             </div>
@@ -449,7 +475,7 @@ END:VCALENDAR`;
               variant="gold"
               className="px-10 py-4 font-bold"
             >
-              Save My Seat
+              Join the Waitlist
             </InteractiveButton>
           </div>
         </div>
@@ -460,13 +486,13 @@ END:VCALENDAR`;
         <div className="max-w-xl mx-auto px-6 text-center space-y-8">
           <div className="space-y-3">
             <span className="font-sans font-bold text-xs text-gold capitalize tracking-[0.25em] block">
-              Join the Waitlist for the Next Live Masterclass
+              The Next Live Masterclass
             </span>
             <h2 className="font-serif text-[32px] font-bold text-ink">
-              Save Your Seat
+              Join the Waitlist
             </h2>
             <p className="font-sans text-base text-ink-muted leading-relaxed font-light">
-              Join Leaders Preparing for the Future of AI. Folks in the waitlist would be first to get invited to the next masterclass, along with AI leadership insights and practical resources from The Forward Org.
+              Be first to hear the next live date, plus my weekly AI insights.
             </p>
           </div>
 
@@ -541,12 +567,12 @@ END:VCALENDAR`;
                   variant="gold"
                   className="w-full py-4 text-center text-sm font-bold capitalize tracking-wider"
                 >
-                  {isSubmitting ? "Processing Reservation..." : "Join the Waitlist"}
+                  {isSubmitting ? "Joining..." : "Join the Waitlist"}
                 </InteractiveButton>
               </div>
 
               <p className="text-center text-[11px] text-ink-faint">
-                Conducted with absolute confidentiality. No marketing spam, guaranteed.
+                Your details stay private. No spam. Unsubscribe anytime.
               </p>
             </form>
           ) : (
@@ -555,7 +581,7 @@ END:VCALENDAR`;
               
               <div className="space-y-4 border-b border-[#C9A55A]/20 pb-8">
                 <div className="flex items-center gap-3">
-                  <h3 className="font-serif text-3xl font-bold text-ink leading-tight">You're In.</h3>
+                  <h3 className="font-serif text-3xl font-bold text-ink leading-tight">You're on the list.</h3>
                   {/* Inline green circle tick next to text */}
                   <span className="inline-flex items-center justify-center bg-[#1A3C34] text-white rounded-full w-8 h-8 shrink-0">
                     <Check size={18} strokeWidth={3} />
@@ -563,74 +589,8 @@ END:VCALENDAR`;
                 </div>
                 
                 <p className="font-sans text-[16px] text-ink-muted leading-relaxed font-light mt-2">
-                  Your seat for &ldquo;Become the Leader Your Organization Trusts to Navigate AI&rdquo; is saved.
+                  You're on the waitlist for &ldquo;The AI-Forward Leader: How to Think, Work and Lead Differently in the AI Era.&rdquo; You'll be first to hear the next live date.
                 </p>
-                
-                <div className="bg-white px-5 py-4 border-l-2 border-gold flex items-center font-serif text-[15px] text-ink font-bold shadow-sm mt-4 select-none">
-                  <span>17 July 2026 · 12 PM Eastern Time · 90 minutes · Live Only</span>
-                </div>
-              </div>
-
-              {/* Swapped Calendar Buttons with Brand Logos and hover properties */}
-              <div className="space-y-6">
-                <p className="font-sans font-bold text-xs text-gold uppercase tracking-wider select-none">Never Miss It. Add To Your Calendar.</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* 1. Apple (Swapped positions) */}
-                  <a 
-                    href={calendarUrlApple} 
-                    className="flex items-center justify-center px-4 py-3 bg-white hover:bg-gold/5 border border-gold/15 hover:border-gold hover:text-gold text-xs font-semibold text-ink transition-all duration-200 rounded-none shadow-sm cursor-pointer"
-                  >
-                    <svg className="w-4 h-4 mr-2 shrink-0 fill-current" viewBox="0 0 24 24">
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.21.67-2.93 1.49-.62.69-1.16 1.84-1.01 2.96 1.12.09 2.27-.58 2.95-1.39z"/>
-                    </svg>
-                    <span>Add to Apple Calendar (iCal)</span>
-                  </a>
-
-                  {/* 2. Google (Swapped positions) */}
-                  <a 
-                    href={calendarUrlGoogle} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-center justify-center px-4 py-3 bg-white hover:bg-gold/5 border border-gold/15 hover:border-gold hover:text-gold text-xs font-semibold text-ink transition-all duration-200 rounded-none shadow-sm cursor-pointer"
-                  >
-                    <svg className="w-4 h-4 mr-2 shrink-0" viewBox="0 0 24 24">
-                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.13-4.53z"/>
-                    </svg>
-                    <span>Add to Google Calendar</span>
-                  </a>
-
-                  {/* 3. Yahoo (Swapped positions) */}
-                  <a 
-                    href={calendarUrlYahoo} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-center justify-center px-4 py-3 bg-white hover:bg-gold/5 border border-gold/15 hover:border-gold hover:text-gold text-xs font-semibold text-ink transition-all duration-200 rounded-none shadow-sm cursor-pointer"
-                  >
-                    <svg className="w-4 h-4 mr-2 shrink-0" viewBox="0 0 24 24">
-                      <path fill="#6001d2" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 5.5l2.25 4.5 2.25-4.5h2.5L14 13.5v4h-2.5v-4L8 7.5h2.5z"/>
-                    </svg>
-                    <span>Add to Yahoo Calendar</span>
-                  </a>
-
-                  {/* 4. Outlook (Swapped positions) */}
-                  <a 
-                    href={calendarUrlOutlook} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-center justify-center px-4 py-3 bg-white hover:bg-gold/5 border border-gold/15 hover:border-gold hover:text-gold text-xs font-semibold text-ink transition-all duration-200 rounded-none shadow-sm cursor-pointer"
-                  >
-                    <svg className="w-4 h-4 mr-2 shrink-0" viewBox="0 0 24 24">
-                      <path fill="#0078d4" d="M1 5.5V18.5L9.5 22V2L1 5.5Z"/>
-                      <path fill="#106ebe" d="M9.5 2V22L23 18.5V5.5L9.5 2Z"/>
-                      <path fill="#ffffff" d="M12.5 7.5H20V15H12.5V7.5Z" opacity="0.8"/>
-                      <path fill="#106ebe" d="M14 9H18.5V13.5H14V9Z"/>
-                    </svg>
-                    <span>Add to Outlook</span>
-                  </a>
-                </div>
               </div>
 
               {/* What Happens Next list */}
@@ -639,24 +599,24 @@ END:VCALENDAR`;
                 <ul className="space-y-3 font-sans text-sm text-ink-muted leading-relaxed font-light">
                   <li className="flex items-start gap-3">
                     <span className="text-gold mt-0.5">●</span>
-                    <span>You'll get a confirmation email right now.</span>
+                    <span>You'll hear the next live date by email before anyone else.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold mt-0.5">●</span>
-                    <span>You'll get a reminder 24 hours before, and again 1 hour before.</span>
+                    <span>Once the date is set, you'll get a reminder before the session.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-gold mt-0.5">●</span>
-                    <span>Come ready to be honest with yourself. The scoring only works live.</span>
+                    <span>Come ready to be honest with yourself. The scoring works best live.</span>
                   </li>
                 </ul>
               </div>
 
               {/* Bring A Leader secondary action */}
               <div className="space-y-4 pt-8 border-t border-[#C9A55A]/20">
-                <h4 className="font-serif text-xl font-bold text-ink">Know a Leader Who Should Be in the AI Conversations &rarr; and Isn't Yet?</h4>
+                <h4 className="font-serif text-xl font-bold text-ink">Know someone who should be in this conversation?</h4>
                 <p className="font-sans text-[14px] text-ink-muted leading-relaxed font-light">
-                  Bring them with you. The leaders who make this shift do not make it alone.
+                  Send them this link. People make this shift faster together.
                 </p>
                 <div className="flex items-center gap-2 mt-4 select-all">
                   <input
@@ -679,7 +639,7 @@ END:VCALENDAR`;
               </div>
 
               <div className="pt-6 text-center border-t border-[#C9A55A]/20 select-none">
-                <p className="font-serif text-base italic text-gold font-bold">See you on the 17th. &mdash; Pan</p>
+                <p className="font-serif text-base italic text-gold font-bold">See you there. &rarr; Pan</p>
               </div>
 
             </div>
