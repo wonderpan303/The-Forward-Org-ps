@@ -138,7 +138,7 @@ export default function Masterclass() {
     {
       id: 5,
       question: "What happens after the masterclass?",
-      answer: "You leave with your score and a clear next move. For anyone who wants to go deeper, I'll share an invitation to a small founding cohort, where we keep learning and practising together. It's optional.",
+      answer: "You leave with your score and a clear next move. For anyone who wants to go deeper, I'll share an invitation to join the founding cohort of the Forward Leader Accelerator™. It's optional.",
     },
     {
       id: 6,
